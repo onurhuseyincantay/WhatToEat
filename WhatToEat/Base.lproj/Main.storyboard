@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-ID-iQA">
+                                <rect key="frame" x="56.5" y="177" width="262.5" height="333.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hB1-QX-cwA">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="72"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rL6-u4-pu8">
+                                        <rect key="frame" x="0.0" y="87" width="262.5" height="72.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-br-hRN">
+                                        <rect key="frame" x="0.0" y="174.5" width="262.5" height="72"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7OU-Dr-zhT">
+                                        <rect key="frame" x="0.0" y="261.5" width="262.5" height="72"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-F8-lAh">
+                                <rect key="frame" x="56" y="526.5" width="263" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.43921568630000002" green="0.52156862749999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Gl-h1-lT8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N3u-F8-lAh" firstAttribute="trailing" secondItem="SJK-ID-iQA" secondAttribute="trailing" id="2PD-mg-A9s"/>
+                            <constraint firstItem="SJK-ID-iQA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="81B-5k-or4"/>
+                            <constraint firstItem="N3u-F8-lAh" firstAttribute="leading" secondItem="SJK-ID-iQA" secondAttribute="leading" id="EUw-Xh-LZP"/>
+                            <constraint firstItem="SJK-ID-iQA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KVT-Dc-uFT"/>
+                            <constraint firstItem="N3u-F8-lAh" firstAttribute="centerX" secondItem="SJK-ID-iQA" secondAttribute="centerX" id="Rll-6d-8Jc"/>
+                            <constraint firstItem="SJK-ID-iQA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="qyN-GM-LwZ"/>
+                            <constraint firstItem="N3u-F8-lAh" firstAttribute="top" secondItem="SJK-ID-iQA" secondAttribute="bottom" constant="16" id="tud-aX-CKf"/>
+                            <constraint firstItem="SJK-ID-iQA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="xju-Fz-6Xh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="yYc-br-hRN" id="dbT-hx-O2y"/>
+                        <outlet property="nameTextField" destination="hB1-QX-cwA" id="W4G-6I-9Nd"/>
+                        <outlet property="passwordTextField" destination="7OU-Dr-zhT" id="tay-ol-D2s"/>
+                        <outlet property="surnameTextField" destination="rL6-u4-pu8" id="Gfg-Oa-FaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+</document>
