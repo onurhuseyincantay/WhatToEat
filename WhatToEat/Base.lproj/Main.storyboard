@@ -54,7 +54,7 @@
                                     <color key="titleColor" red="0.43921568630000002" green="0.52156862749999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Gl-h1-lT8"/>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpw-wg-ikb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +81,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="2Aa-7m-dO1">
+            <objects>
+                <navigationController storyboardIdentifier="MainViewController" id="zKz-QA-Krr" customClass="MainViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IAk-Hm-kSq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TqB-V6-NTb" kind="relationship" relationship="rootViewController" id="PRp-EM-PQp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="620-Sz-Af7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="32"/>
+        </scene>
+        <!--What2Eat-->
+        <scene sceneID="iCp-ai-2yh">
+            <objects>
+                <tableViewController title="What2Eat" id="rRw-gB-hSP" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmp-kc-MP5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NZM-Lc-Fda">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NZM-Lc-Fda" id="3wL-g6-0hB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rRw-gB-hSP" id="gAB-KP-R7c"/>
+                            <outlet property="delegate" destination="rRw-gB-hSP" id="3DY-AK-MtJ"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="zre-kR-5dh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XqE-Bg-thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="860"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="Nqy-3c-5X7">
+            <objects>
+                <viewController title="Profil" id="EK2-1f-m2T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="STN-SX-2XF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2PN-bt-dFH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="g2d-LP-SKf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwa-LK-yNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="860"/>
+        </scene>
+        <!--Anketlerim-->
+        <scene sceneID="fEp-FZ-0Ji">
+            <objects>
+                <viewController title="Anketlerim" id="8ob-1w-b6J" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kMc-Ke-zit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nAN-0z-GQt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="recents" id="hcg-zq-IlB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wkm-Ix-vkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="860"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hIt-bj-OOf">
+            <objects>
+                <tabBarController id="TqB-V6-NTb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="byd-uc-rI5"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7P8-CP-WJg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8ob-1w-b6J" kind="relationship" relationship="viewControllers" id="obN-AL-hRM"/>
+                        <segue destination="rRw-gB-hSP" kind="relationship" relationship="viewControllers" id="pvS-G7-q0s"/>
+                        <segue destination="EK2-1f-m2T" kind="relationship" relationship="viewControllers" id="4r1-xS-Rui"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tne-cq-I0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="32"/>
         </scene>
     </scenes>
 </document>

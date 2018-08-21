@@ -28,9 +28,20 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender : UIButton){
         self.presenter.register(email: emailTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, surname: surnameTextField.text!) { (error) in
             if error != nil{
-                self.registrationDidFailed(message: "Register Failed")
+                self.DidFailed(message: "Register Failed")
             }else{
-                self.registrationDidSucceed()
+                self.DidSucceed()
+            }
+        }
+    }
+    @IBAction func loginPressed(_ sender: UIButton){
+        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+            if error != nil {
+                self.DidFailed(message: "Login Failed")
+            }else{
+                self.DidSucceed()
+                let user = User()
+                self.navigateMainView(user: user)
             }
         }
     }
@@ -45,12 +56,20 @@ extension RegisterViewController:RegistrationDelegate{
         print("Hiding Progress")
     }
     
-    func registrationDidSucceed() {
+    func DidSucceed() {
         print("Succeed")
     }
     
-    func registrationDidFailed(message: String) {
+    func DidFailed(message: String) {
         print(message)
+    }
+    func navigateMainView(user : User) {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
+            print("S.a")
+            self.present(viewController, animated: true) {
+                viewController.currentUser = user
+            }
+        }
     }
 }
 

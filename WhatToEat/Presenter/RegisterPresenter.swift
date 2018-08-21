@@ -27,25 +27,40 @@ class RegisterPresenter: NSObject {
     func register(email: String, password: String, name: String, surname:String,completion : @escaping (Bool?)->()){
         var error : Bool?
         if email.isEmpty{
-            self.registirationDelegate.registrationDidFailed(message: "email can't be blank")
+            self.registirationDelegate.DidFailed(message: "email can't be blank")
             error = true
         }else if password.isEmpty{
-            self.registirationDelegate.registrationDidFailed(message: "password can't be blank")
+            self.registirationDelegate.DidFailed(message: "password can't be blank")
             error = true
         }else if name.isEmpty{
-            self.registirationDelegate.registrationDidFailed(message: "name can't be blank")
+            self.registirationDelegate.DidFailed(message: "name can't be blank")
             error = true
         }else if surname.isEmpty{
-            self.registirationDelegate.registrationDidFailed(message: "surname can't be blank")
+            self.registirationDelegate.DidFailed(message: "surname can't be blank")
             error = true
         }
         completion(error)
     }
+    func login(email:String,password: String,completion : @escaping (Bool?)->()){
+        var error : Bool?
+        if email.isEmpty{
+            self.registirationDelegate.DidFailed(message: "email can't be blank")
+            error = true
+        }else if password.isEmpty{
+            self.registirationDelegate.DidFailed(message: "password can't be blank")
+            error = true
+        }
+        // burası Firebase istek kısmı
+        completion(error)
+    }
+   
 }
 
 protocol RegistrationDelegate {
     func showProgress()
     func hideProgress()
-    func registrationDidSucceed()
-    func registrationDidFailed(message: String)
+    func DidSucceed()
+    func DidFailed(message: String)
+    func navigateMainView(user : User)
 }
+
