@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F66212D3BDC00A02F32 /* SurveyModel.swift */; };
+		8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F68212D3DDB00A02F32 /* OfferModel.swift */; };
 		8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8282126B25B00DF6D5E /* AppDelegate.swift */; };
 		8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */; };
 		8F32C82E2126B25B00DF6D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C82C2126B25B00DF6D5E /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F326F66212D3BDC00A02F32 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
+		8F326F68212D3DDB00A02F32 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		8F32C8252126B25B00DF6D5E /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F32C8282126B25B00DF6D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			children = (
 				8F32C8402126BC9D00DF6D5E /* ColorModel.swift */,
 				8FB921A821299564006F5063 /* UserModel.swift */,
+				8F326F66212D3BDC00A02F32 /* SurveyModel.swift */,
+				8F326F68212D3DDB00A02F32 /* OfferModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 				8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */,
 				8F32C83F2126BC6300DF6D5E /* GradientView.swift in Sources */,
 				8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */,
+				8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */,
+				8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

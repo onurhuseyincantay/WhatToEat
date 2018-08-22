@@ -40,8 +40,6 @@ class RegisterViewController: UIViewController {
                 self.DidFailed(message: "Login Failed")
             }else{
                 self.DidSucceed()
-                let user = User()
-                self.navigateMainView(user: user)
             }
         }
     }
