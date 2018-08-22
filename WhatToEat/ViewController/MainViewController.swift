@@ -12,8 +12,8 @@ class MainViewController: UINavigationController {
     var currentUser : User? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
+    
 
 }

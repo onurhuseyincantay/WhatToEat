@@ -17,6 +17,9 @@
 		8F32C83F2126BC6300DF6D5E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C83E2126BC6300DF6D5E /* GradientView.swift */; };
 		8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8402126BC9D00DF6D5E /* ColorModel.swift */; };
 		8F32C8432126BEAE00DF6D5E /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */; };
+		8F65F334212D845E00A44234 /* SurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F333212D845E00A44234 /* SurveyCell.swift */; };
+		8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F335212D896400A44234 /* SurveyPresenter.swift */; };
+		8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */; };
 		8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A6212994A8006F5063 /* MainViewController.swift */; };
 		8FB921A921299564006F5063 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A821299564006F5063 /* UserModel.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,9 @@
 		8F32C83E2126BC6300DF6D5E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8F32C8402126BC9D00DF6D5E /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8F65F333212D845E00A44234 /* SurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCell.swift; sourceTree = "<group>"; };
+		8F65F335212D896400A44234 /* SurveyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPresenter.swift; sourceTree = "<group>"; };
+		8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
 		8FB921A6212994A8006F5063 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8FB921A821299564006F5063 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +103,7 @@
 			children = (
 				8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */,
 				8FB921A6212994A8006F5063 /* MainViewController.swift */,
+				8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */,
+				8F65F335212D896400A44234 /* SurveyPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8F32C83E2126BC6300DF6D5E /* GradientView.swift */,
+				8F65F333212D845E00A44234 /* SurveyCell.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -190,9 +199,12 @@
 			files = (
 				8F32C8432126BEAE00DF6D5E /* RegisterPresenter.swift in Sources */,
 				8FB921A921299564006F5063 /* UserModel.swift in Sources */,
+				8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */,
+				8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */,
 				8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */,
 				8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */,
 				8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */,
+				8F65F334212D845E00A44234 /* SurveyCell.swift in Sources */,
 				8F32C83F2126BC6300DF6D5E /* GradientView.swift in Sources */,
 				8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */,
 				8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */,

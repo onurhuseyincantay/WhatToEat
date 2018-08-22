@@ -40,6 +40,7 @@ class RegisterViewController: UIViewController {
                 self.DidFailed(message: "Login Failed")
             }else{
                 self.DidSucceed()
+                self.navigateMainView()
             }
         }
     }
@@ -61,12 +62,10 @@ extension RegisterViewController:RegistrationDelegate{
     func DidFailed(message: String) {
         print(message)
     }
-    func navigateMainView(user : User) {
+    func navigateMainView() {
         if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
             print("S.a")
-            self.present(viewController, animated: true) {
-                viewController.currentUser = user
-            }
+            self.present(viewController, animated: true, completion: nil)
         }
     }
 }

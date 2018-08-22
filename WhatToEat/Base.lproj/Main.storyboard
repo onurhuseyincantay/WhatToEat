@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -101,19 +103,70 @@
         <!--What2Eat-->
         <scene sceneID="iCp-ai-2yh">
             <objects>
-                <tableViewController title="What2Eat" id="rRw-gB-hSP" sceneMemberID="viewController">
+                <tableViewController title="What2Eat" id="rRw-gB-hSP" customClass="SurveyTableViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmp-kc-MP5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NZM-Lc-Fda">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SurveyCell" rowHeight="99" id="NZM-Lc-Fda" customClass="SurveyCell" customModule="WhatToEat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NZM-Lc-Fda" id="3wL-g6-0hB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JfC-j9-qsY">
+                                            <rect key="frame" x="99.5" y="11" width="251.5" height="77"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8GY-zO-4tg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="251.5" height="38.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="IDb-DZ-zKb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="38.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-au-97l">
+                                                            <rect key="frame" x="134.5" y="0.0" width="117" height="38.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-UP-yIr">
+                                                    <rect key="frame" x="0.0" y="38.5" width="251.5" height="38.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="juc-Ly-cAA">
+                                            <rect key="frame" x="8" y="7.5" width="83.5" height="83.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="juc-Ly-cAA" secondAttribute="height" multiplier="1:1" id="BOm-CT-Ngz"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JfC-j9-qsY" secondAttribute="bottom" id="7D8-Li-ZNW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JfC-j9-qsY" secondAttribute="trailing" constant="8" id="DHv-qw-NPL"/>
+                                        <constraint firstItem="JfC-j9-qsY" firstAttribute="leading" secondItem="juc-Ly-cAA" secondAttribute="trailing" constant="8" id="OdB-83-KVh"/>
+                                        <constraint firstItem="juc-Ly-cAA" firstAttribute="height" secondItem="3wL-g6-0hB" secondAttribute="height" multiplier="0.85" id="TLt-Cf-9lr"/>
+                                        <constraint firstItem="JfC-j9-qsY" firstAttribute="top" secondItem="3wL-g6-0hB" secondAttribute="topMargin" id="hAs-1s-foD"/>
+                                        <constraint firstItem="juc-Ly-cAA" firstAttribute="leading" secondItem="3wL-g6-0hB" secondAttribute="leading" constant="8" id="hXO-B5-xav"/>
+                                        <constraint firstItem="juc-Ly-cAA" firstAttribute="centerY" secondItem="3wL-g6-0hB" secondAttribute="centerY" id="hc2-Vj-qMY"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImage" destination="juc-Ly-cAA" id="Ka6-tJ-IbA"/>
+                                    <outlet property="surveyDate" destination="z6P-au-97l" id="3Hg-kq-zun"/>
+                                    <outlet property="surveyDescription" destination="Vhp-UP-yIr" id="ag9-4o-rSt"/>
+                                    <outlet property="surveyHeader" destination="IDb-DZ-zKb" id="0FR-1z-RAK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -125,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqE-Bg-thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="860"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="859.52023988005999"/>
         </scene>
         <!--Profil-->
         <scene sceneID="Nqy-3c-5X7">
@@ -180,4 +233,7 @@
             <point key="canvasLocation" x="1839" y="32"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ProfilePhoto" width="732" height="732"/>
+    </resources>
 </document>

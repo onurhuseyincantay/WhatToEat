@@ -10,7 +10,6 @@ import UIKit
 
 class RegisterPresenter: NSObject {
     var registirationDelegate : RegistrationDelegate
-    let backgroundColor : UIColor = .white
     let  modelColor = Colors()
     init(delegate: RegistrationDelegate) {
         self.registirationDelegate = delegate
@@ -61,6 +60,6 @@ protocol RegistrationDelegate {
     func hideProgress()
     func DidSucceed()
     func DidFailed(message: String)
-    func navigateMainView(user : User)
+    func navigateMainView()
 }
 
