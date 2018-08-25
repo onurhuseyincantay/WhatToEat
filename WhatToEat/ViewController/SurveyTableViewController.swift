@@ -25,9 +25,10 @@ class SurveyTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let survey = self.showSurveyInfo(surveyId: indexPath.row)
-        print(survey.header)
-        print(survey.description)
-        print(survey.openedUser.name)
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SurveyOfferViewController") as? SurveyOfferViewController{
+            viewController.survey = survey
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 extension SurveyTableViewController:SurveyDelegate{
