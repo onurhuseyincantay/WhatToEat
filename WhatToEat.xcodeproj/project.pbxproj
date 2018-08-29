@@ -25,6 +25,7 @@
 		8F6FE1CC213135AD00FD8C3E /* SurveyOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */; };
 		8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A6212994A8006F5063 /* MainViewController.swift */; };
 		8FB921A921299564006F5063 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A821299564006F5063 /* UserModel.swift */; };
+		8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD88311213704DD00BCD76F /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyOfferCell.swift; sourceTree = "<group>"; };
 		8FB921A6212994A8006F5063 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8FB921A821299564006F5063 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8FD88311213704DD00BCD76F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				8FB921A6212994A8006F5063 /* MainViewController.swift */,
 				8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */,
 				8F6FE1C72131339A00FD8C3E /* SurveyOfferViewController.swift */,
+				8FD88311213704DD00BCD76F /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */,
 				8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */,
 				8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */,
+				8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */,
 				8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */,
 				8F6FE1C82131339A00FD8C3E /* SurveyOfferViewController.swift in Sources */,
 				8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */,

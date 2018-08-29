@@ -347,21 +347,58 @@
             </objects>
             <point key="canvasLocation" x="2588" y="860"/>
         </scene>
-        <!--Anketlerim-->
+        <!--Profile-->
         <scene sceneID="fEp-FZ-0Ji">
             <objects>
-                <viewController title="Anketlerim" id="8ob-1w-b6J" sceneMemberID="viewController">
+                <viewController title="Profile" id="8ob-1w-b6J" customClass="ProfileViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMc-Ke-zit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o58-PY-C09">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZv-pL-wIk">
+                                        <rect key="frame" x="0.0" y="-57" width="375" height="667"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-zT-dK9">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+                                                <color key="backgroundColor" red="0.46666666670000001" green="0.24313725489999999" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="CFH-zT-dK9" firstAttribute="centerX" secondItem="sZv-pL-wIk" secondAttribute="centerX" id="55H-8L-5Tv"/>
+                                            <constraint firstAttribute="bottom" secondItem="CFH-zT-dK9" secondAttribute="bottom" constant="553" id="GcB-Gy-ZMd"/>
+                                            <constraint firstItem="CFH-zT-dK9" firstAttribute="top" secondItem="sZv-pL-wIk" secondAttribute="top" id="LXP-A2-t1C"/>
+                                            <constraint firstItem="CFH-zT-dK9" firstAttribute="width" secondItem="sZv-pL-wIk" secondAttribute="width" id="bjz-ix-obO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o58-PY-C09" firstAttribute="centerX" secondItem="nAN-0z-GQt" secondAttribute="centerX" id="1iP-eL-BSf"/>
+                            <constraint firstItem="o58-PY-C09" firstAttribute="width" secondItem="kMc-Ke-zit" secondAttribute="width" id="IWf-Un-Ecp"/>
+                            <constraint firstItem="o58-PY-C09" firstAttribute="height" secondItem="kMc-Ke-zit" secondAttribute="height" id="gs4-tn-KKw"/>
+                            <constraint firstItem="o58-PY-C09" firstAttribute="centerY" secondItem="nAN-0z-GQt" secondAttribute="centerY" id="iD3-nG-E8g"/>
+                            <constraint firstItem="sZv-pL-wIk" firstAttribute="height" secondItem="kMc-Ke-zit" secondAttribute="height" id="iJw-d6-PJv"/>
+                            <constraint firstItem="sZv-pL-wIk" firstAttribute="width" secondItem="kMc-Ke-zit" secondAttribute="width" id="pF5-w5-FRn"/>
+                            <constraint firstItem="sZv-pL-wIk" firstAttribute="centerX" secondItem="nAN-0z-GQt" secondAttribute="centerX" id="rkh-Rj-pvS"/>
+                            <constraint firstItem="sZv-pL-wIk" firstAttribute="centerY" secondItem="nAN-0z-GQt" secondAttribute="centerY" id="yBn-O3-ehF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nAN-0z-GQt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" systemItem="recents" id="hcg-zq-IlB"/>
+                    <connections>
+                        <outlet property="purpleView" destination="CFH-zT-dK9" id="Srx-mF-1bo"/>
+                        <outlet property="scrollView" destination="o58-PY-C09" id="m1n-ui-qnt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkm-Ix-vkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="860"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="859.52023988005999"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hIt-bj-OOf">
@@ -374,8 +411,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8ob-1w-b6J" kind="relationship" relationship="viewControllers" id="obN-AL-hRM"/>
                         <segue destination="rRw-gB-hSP" kind="relationship" relationship="viewControllers" id="pvS-G7-q0s"/>
+                        <segue destination="8ob-1w-b6J" kind="relationship" relationship="viewControllers" id="obN-AL-hRM"/>
                         <segue destination="EK2-1f-m2T" kind="relationship" relationship="viewControllers" id="4r1-xS-Rui"/>
                     </connections>
                 </tabBarController>
