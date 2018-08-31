@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField : UITextField!
     @IBOutlet private weak var passwordTextField : UITextField!
+    @IBOutlet weak private var logoImageView : UIImageView!
+    @IBOutlet weak var logoConstraint: NSLayoutConstraint!
     
     private var presenter : LoginPresenter!
     
@@ -21,6 +23,7 @@ class LoginViewController: UIViewController {
         presenter.modelColor.updateColors {
             self.view.backgroundColor = self.presenter.modelColor.colors.first!
         }
+        self.logoConstraint.constant = self.logoImageView.frame.height / 8
     }
     
     override func viewWillAppear(_ animated: Bool) {
