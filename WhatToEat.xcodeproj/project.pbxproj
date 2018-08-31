@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F09ECE32139A4B300CA67B7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F09ECE22139A4B300CA67B7 /* Service.swift */; };
 		8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F66212D3BDC00A02F32 /* SurveyModel.swift */; };
 		8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F68212D3DDB00A02F32 /* OfferModel.swift */; };
 		8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8282126B25B00DF6D5E /* AppDelegate.swift */; };
-		8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */; };
+		8F32C82B2126B25B00DF6D5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C82A2126B25B00DF6D5E /* LoginViewController.swift */; };
 		8F32C82E2126B25B00DF6D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C82C2126B25B00DF6D5E /* Main.storyboard */; };
 		8F32C8302126B25D00DF6D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C82F2126B25D00DF6D5E /* Assets.xcassets */; };
 		8F32C8332126B25D00DF6D5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F32C8312126B25D00DF6D5E /* LaunchScreen.storyboard */; };
 		8F32C83F2126BC6300DF6D5E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C83E2126BC6300DF6D5E /* GradientView.swift */; };
 		8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8402126BC9D00DF6D5E /* ColorModel.swift */; };
-		8F32C8432126BEAE00DF6D5E /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */; };
+		8F32C8432126BEAE00DF6D5E /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8422126BEAE00DF6D5E /* LoginPresenter.swift */; };
 		8F65F334212D845E00A44234 /* SurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F333212D845E00A44234 /* SurveyCell.swift */; };
 		8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F335212D896400A44234 /* SurveyPresenter.swift */; };
 		8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */; };
@@ -25,22 +26,27 @@
 		8F6FE1CC213135AD00FD8C3E /* SurveyOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */; };
 		8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A6212994A8006F5063 /* MainViewController.swift */; };
 		8FB921A921299564006F5063 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB921A821299564006F5063 /* UserModel.swift */; };
+		8FC7BAB421398D3B00D4A165 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7BAB321398D3B00D4A165 /* CardView.swift */; };
+		8FC7BAB6213990F500D4A165 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7BAB5213990F500D4A165 /* RoundedImage.swift */; };
+		8FC7BAB82139945200D4A165 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7BAB72139945200D4A165 /* RegisterPresenter.swift */; };
+		8FC7BABA21399E6C00D4A165 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7BAB921399E6C00D4A165 /* RegisterViewController.swift */; };
 		8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD88311213704DD00BCD76F /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F09ECE22139A4B300CA67B7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8F326F66212D3BDC00A02F32 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
 		8F326F68212D3DDB00A02F32 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		8F32C8252126B25B00DF6D5E /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F32C8282126B25B00DF6D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8F32C82A2126B25B00DF6D5E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8F32C82D2126B25B00DF6D5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F32C82F2126B25D00DF6D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F32C8322126B25D00DF6D5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F32C8342126B25D00DF6D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F32C83E2126BC6300DF6D5E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8F32C8402126BC9D00DF6D5E /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
-		8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8F32C8422126BEAE00DF6D5E /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8F65F333212D845E00A44234 /* SurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCell.swift; sourceTree = "<group>"; };
 		8F65F335212D896400A44234 /* SurveyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPresenter.swift; sourceTree = "<group>"; };
 		8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTableViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,10 @@
 		8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyOfferCell.swift; sourceTree = "<group>"; };
 		8FB921A6212994A8006F5063 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8FB921A821299564006F5063 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8FC7BAB321398D3B00D4A165 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8FC7BAB5213990F500D4A165 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		8FC7BAB72139945200D4A165 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8FC7BAB921399E6C00D4A165 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8FD88311213704DD00BCD76F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F09ECE12139A49C00CA67B7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8F09ECE22139A4B300CA67B7 /* Service.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8F32C81C2126B25B00DF6D5E = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +100,7 @@
 		8F32C8272126B25B00DF6D5E /* WhatToEat */ = {
 			isa = PBXGroup;
 			children = (
+				8F09ECE12139A49C00CA67B7 /* Network */,
 				8F32C83D2126BC2D00DF6D5E /* CustomComponents */,
 				8F32C83C2126B93200DF6D5E /* Presenter */,
 				8F32C83B2126B91800DF6D5E /* ViewController */,
@@ -109,11 +128,12 @@
 		8F32C83B2126B91800DF6D5E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8F32C82A2126B25B00DF6D5E /* RegisterViewController.swift */,
+				8F32C82A2126B25B00DF6D5E /* LoginViewController.swift */,
 				8FB921A6212994A8006F5063 /* MainViewController.swift */,
 				8F65F337212D89BE00A44234 /* SurveyTableViewController.swift */,
 				8F6FE1C72131339A00FD8C3E /* SurveyOfferViewController.swift */,
 				8FD88311213704DD00BCD76F /* ProfileViewController.swift */,
+				8FC7BAB921399E6C00D4A165 /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -121,9 +141,10 @@
 		8F32C83C2126B93200DF6D5E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				8F32C8422126BEAE00DF6D5E /* RegisterPresenter.swift */,
+				8F32C8422126BEAE00DF6D5E /* LoginPresenter.swift */,
 				8F65F335212D896400A44234 /* SurveyPresenter.swift */,
 				8F6FE1C9213133F400FD8C3E /* SurveyOfferPresenter.swift */,
+				8FC7BAB72139945200D4A165 /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -134,6 +155,8 @@
 				8F32C83E2126BC6300DF6D5E /* GradientView.swift */,
 				8F65F333212D845E00A44234 /* SurveyCell.swift */,
 				8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */,
+				8FC7BAB321398D3B00D4A165 /* CardView.swift */,
+				8FC7BAB5213990F500D4A165 /* RoundedImage.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -210,20 +233,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F6FE1CC213135AD00FD8C3E /* SurveyOfferCell.swift in Sources */,
-				8F32C8432126BEAE00DF6D5E /* RegisterPresenter.swift in Sources */,
+				8F32C8432126BEAE00DF6D5E /* LoginPresenter.swift in Sources */,
 				8FB921A921299564006F5063 /* UserModel.swift in Sources */,
+				8FC7BAB6213990F500D4A165 /* RoundedImage.swift in Sources */,
 				8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */,
 				8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */,
-				8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */,
+				8F32C82B2126B25B00DF6D5E /* LoginViewController.swift in Sources */,
 				8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */,
+				8F09ECE32139A4B300CA67B7 /* Service.swift in Sources */,
 				8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */,
 				8F6FE1C82131339A00FD8C3E /* SurveyOfferViewController.swift in Sources */,
 				8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */,
+				8FC7BABA21399E6C00D4A165 /* RegisterViewController.swift in Sources */,
+				8FC7BAB82139945200D4A165 /* RegisterPresenter.swift in Sources */,
 				8F65F334212D845E00A44234 /* SurveyCell.swift in Sources */,
 				8F6FE1CA213133F400FD8C3E /* SurveyOfferPresenter.swift in Sources */,
 				8F32C83F2126BC6300DF6D5E /* GradientView.swift in Sources */,
 				8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */,
 				8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */,
+				8FC7BAB421398D3B00D4A165 /* CardView.swift in Sources */,
 				8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

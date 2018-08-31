@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  WhatToEat
 //
-//  Created by Onur Hüseyin Çantay on 17.08.2018.
+//  Created by Onur Hüseyin Çantay on 31.08.2018.
 //  Copyright © 2018 Onur Hüseyin Çantay. All rights reserved.
 //
 
@@ -10,21 +10,31 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet private weak var nameTextField : UITextField!
-    @IBOutlet private weak var surnameTextField : UITextField!
-    @IBOutlet private weak var emailTextField : UITextField!
-    @IBOutlet private weak var passwordTextField : UITextField!
+    @IBOutlet weak private var emailTextField : UITextField!
+    @IBOutlet weak private var passwordTextField : UITextField!
+    @IBOutlet weak private var nameTextField : UITextField!
+    @IBOutlet weak private var surnameTextField : UITextField!
+    @IBOutlet weak private var profilePhotoImageView : UIImageView!
+    @IBOutlet weak private var photoChooserRecognizer : UITapGestureRecognizer!
+    @IBOutlet weak var profilePhotoConstraint: NSLayoutConstraint!
     
-    private var presenter : RegisterPresenter!
-    
+    var presenter : RegisterPresenter!
+    private var photoUpdated : Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = RegisterPresenter(delegate: self)
+        self.presenter.modelColor.updateColors {
+            self.view.backgroundColor = self.presenter.modelColor.colors.first!
+        }
+        self.profilePhotoConstraint.constant = -self.profilePhotoImageView.frame.height / 2
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.modelColor.updateColors {
             self.view.backgroundColor = self.presenter.modelColor.colors.first!
         }
     }
-    
+
     @IBAction func registerPressed(_ sender : UIButton){
         self.presenter.register(email: emailTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, surname: surnameTextField.text!) { (error) in
             if error != nil{
@@ -34,19 +44,18 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    @IBAction func loginPressed(_ sender: UIButton){
-        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
-            if error != nil {
-                self.DidFailed(message: "Login Failed")
-            }else{
-                self.DidSucceed()
-                self.navigateMainView()
-            }
+    @IBAction func backPressed(_ sender : UIButton){
+        self.navigateLoginViewController()
+    }
+
+}
+extension RegisterViewController : RegisterDelegate{
+    func navigateMainViewController() {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
+            print("S.a")
+            self.present(viewController, animated: true, completion: nil)
         }
     }
-}
-
-extension RegisterViewController:RegistrationDelegate{
     func showProgress() {
         print("Showing Progress")
     }
@@ -62,11 +71,11 @@ extension RegisterViewController:RegistrationDelegate{
     func DidFailed(message: String) {
         print(message)
     }
-    func navigateMainView() {
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
-            print("S.a")
-            self.present(viewController, animated: true, completion: nil)
-        }
+    
+    func navigateLoginViewController() {
+        self.dismiss(animated: true, completion: nil)
+        print("Back To Login")
     }
+    
+    
 }
-
