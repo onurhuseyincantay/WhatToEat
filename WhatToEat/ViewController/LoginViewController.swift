@@ -36,12 +36,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: UIButton){
-        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (error,user)  in
             if error != nil {
-                self.DidFailed(message: "Login Failed")
-            }else{
-                self.DidSucceed()
+                self.DidFailed(message: "Fields Cannot be Blank")
+            }else if error == true {
+                self.DidSucceed(user: user!)
                 self.navigateMainViewController()
+            }else{
+                print("user not found")
             }
         }
     }
@@ -73,8 +75,8 @@ extension LoginViewController:LoginDelegate{
         print("Hiding Progress")
     }
     
-    func DidSucceed() {
-        print("Succeed")
+    func DidSucceed(user : User) {
+        print("Welcome \(user.name)")
     }
     
     func DidFailed(message: String) {

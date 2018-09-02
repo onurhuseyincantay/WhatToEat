@@ -9,6 +9,7 @@
 import Foundation
 class User : Codable {
     private var _name : String!
+    private var _id : String!
     private var _surname : String!
     private var _email : String!
     private var _password : String!
@@ -23,6 +24,13 @@ class User : Codable {
             return self._name
         }set{
             self._name = newValue
+        }
+    }
+    var id : String{
+        get{
+            return self._id
+        }set{
+            self._id = newValue
         }
     }
     var surname : String{
@@ -86,8 +94,9 @@ class User : Codable {
             self._acceptedOffers = newValue
         }
     }
-    init(name: String,surname:String,email:String,password : String,joinedDate : Date,surveys : [SurveyModel?],offers :[OfferModel?],profileImage : String,finishedSurveys : [SurveyModel?],acceptedOffers : [OfferModel?]) {
+    init(id:String,name: String,surname:String,email:String,password : String,joinedDate : Date,surveys : [SurveyModel?],offers :[OfferModel?],profileImage : String,finishedSurveys : [SurveyModel?],acceptedOffers : [OfferModel?]) {
         self._name = name
+        self._id = id
         self._surname = surname
         self._email = email
         self._profileImage = profileImage

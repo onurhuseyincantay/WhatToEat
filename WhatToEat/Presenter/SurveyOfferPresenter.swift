@@ -12,7 +12,7 @@ class SurveyOfferPresenter: NSObject {
     var surveyOfferDelegate : SurveyOfferDelegate
     let survey : SurveyModel!
     var offers : [OfferModel?] = []
-    let user = User(name: "Onur", surname: "Çantay", email: "ohc3807@gmail.com", password: "123456", joinedDate:Date(), surveys: [nil], offers: [nil], profileImage: "www.bombabomba.com", finishedSurveys: [nil], acceptedOffers: [nil])
+    let user = User(id:"1",name: "Onur", surname: "Çantay", email: "ohc3807@gmail.com", password: "123456", joinedDate:Date(), surveys: [nil], offers: [nil], profileImage: "www.bombabomba.com", finishedSurveys: [nil], acceptedOffers: [nil])
     
     let cellIdentifier = "SurveyOfferCell"
     init(with delegate:SurveyOfferDelegate,for survey:SurveyModel) {

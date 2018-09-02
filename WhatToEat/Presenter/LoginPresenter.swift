@@ -25,7 +25,8 @@ class LoginPresenter: NSObject {
             completion()
         }
     }
-    func login(email:String,password: String,completion : @escaping (Bool?)->()){
+    
+    func login(email:String,password: String,completion : @escaping (_ result: Bool?, _ user: User?)->()){
         var error : Bool?
         if email.isEmpty{
             self.LoginDelegate.DidFailed(message: "email can't be blank")
@@ -34,16 +35,22 @@ class LoginPresenter: NSObject {
             self.LoginDelegate.DidFailed(message: "password can't be blank")
             error = true
         }
-        // burası Firebase istek kısmı
-        completion(error)
+        Service.service.checkUserOnDatabase(email: email, password: password) { (result, user) in
+            print(user!.name)
+            print(user!.email)
+            completion(result,user)
+        }
+        completion(error,nil)
     }
+    
+    
    
 }
 
 protocol LoginDelegate {
     func showProgress()
     func hideProgress()
-    func DidSucceed()
+    func DidSucceed(user:User)
     func DidFailed(message: String)
     func navigateMainViewController()
     func navigateRegisterViewController()
