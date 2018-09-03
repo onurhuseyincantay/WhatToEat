@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="parallaxCell" id="U6b-Vx-4bR" customClass="ParallaxCollectionReusableView" customModule="WhatToEat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="w3b-8z-QBe">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="308" id="Bm4-av-CmD"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="w3b-8z-QBe" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="3Wb-Tc-FJw"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="w3b-8z-QBe" secondAttribute="trailing" id="9n0-BA-YDX"/>
+                <constraint firstItem="w3b-8z-QBe" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="fIo-cJ-d0Z"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="w3b-8z-QBe" secondAttribute="bottom" id="yCa-a3-Wgh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="w3b-8z-QBe" id="ICU-MU-mmY"/>
+                <outlet property="backgroundImageViewConstraint" destination="Bm4-av-CmD" id="SCP-aL-rL7"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-75"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ProfilePhoto" width="732" height="732"/>
+    </resources>
+</document>
