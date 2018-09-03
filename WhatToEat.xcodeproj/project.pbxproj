@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41FEE87F213AC41E00FC4FEC /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE87E213AC41E00FC4FEC /* ParallaxHeaderView.swift */; };
-		41FEE881213AD54D00FC4FEC /* ParallaxHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FEE880213AD54D00FC4FEC /* ParallaxHeaderView.xib */; };
 		41FEE884213AD87A00FC4FEC /* ParallaxHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE883213AD87A00FC4FEC /* ParallaxHeaderFlowLayout.swift */; };
 		41FEE886213AD8AB00FC4FEC /* ParallaxHeaderLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE885213AD8AB00FC4FEC /* ParallaxHeaderLayoutAttributes.swift */; };
 		41FEE888213ADDDF00FC4FEC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE887213ADDDF00FC4FEC /* ProfilePresenter.swift */; };
+		41FEE88B213AE43100FC4FEC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE88A213AE43100FC4FEC /* ProfileCell.swift */; };
+		41FEE88E213B285D00FC4FEC /* ParallaxCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FEE88C213B285D00FC4FEC /* ParallaxCollectionReusableView.swift */; };
+		41FEE88F213B285D00FC4FEC /* ParallaxCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FEE88D213B285D00FC4FEC /* ParallaxCollectionReusableView.xib */; };
 		8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F66212D3BDC00A02F32 /* SurveyModel.swift */; };
 		8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F68212D3DDB00A02F32 /* OfferModel.swift */; };
 		8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8282126B25B00DF6D5E /* AppDelegate.swift */; };
@@ -34,11 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41FEE87E213AC41E00FC4FEC /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
-		41FEE880213AD54D00FC4FEC /* ParallaxHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParallaxHeaderView.xib; sourceTree = "<group>"; };
 		41FEE883213AD87A00FC4FEC /* ParallaxHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderFlowLayout.swift; sourceTree = "<group>"; };
 		41FEE885213AD8AB00FC4FEC /* ParallaxHeaderLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderLayoutAttributes.swift; sourceTree = "<group>"; };
 		41FEE887213ADDDF00FC4FEC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		41FEE88A213AE43100FC4FEC /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		41FEE88C213B285D00FC4FEC /* ParallaxCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxCollectionReusableView.swift; sourceTree = "<group>"; };
+		41FEE88D213B285D00FC4FEC /* ParallaxCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParallaxCollectionReusableView.xib; sourceTree = "<group>"; };
 		8F326F66212D3BDC00A02F32 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
 		8F326F68212D3DDB00A02F32 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		8F32C8252126B25B00DF6D5E /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,8 +87,8 @@
 		41FEE889213ADFD300FC4FEC /* ParallaxHeader */ = {
 			isa = PBXGroup;
 			children = (
-				41FEE87E213AC41E00FC4FEC /* ParallaxHeaderView.swift */,
-				41FEE880213AD54D00FC4FEC /* ParallaxHeaderView.xib */,
+				41FEE88C213B285D00FC4FEC /* ParallaxCollectionReusableView.swift */,
+				41FEE88D213B285D00FC4FEC /* ParallaxCollectionReusableView.xib */,
 			);
 			path = ParallaxHeader;
 			sourceTree = "<group>";
@@ -165,6 +167,7 @@
 				8F65F333212D845E00A44234 /* SurveyCell.swift */,
 				8F6FE1CB213135AD00FD8C3E /* SurveyOfferCell.swift */,
 				41FEE889213ADFD300FC4FEC /* ParallaxHeader */,
+				41FEE88A213AE43100FC4FEC /* ProfileCell.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -227,8 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FEE881213AD54D00FC4FEC /* ParallaxHeaderView.xib in Resources */,
 				8F32C8332126B25D00DF6D5E /* LaunchScreen.storyboard in Resources */,
+				41FEE88F213B285D00FC4FEC /* ParallaxCollectionReusableView.xib in Resources */,
 				8F32C8302126B25D00DF6D5E /* Assets.xcassets in Resources */,
 				8F32C82E2126B25B00DF6D5E /* Main.storyboard in Resources */,
 			);
@@ -247,8 +250,8 @@
 				8F65F338212D89BE00A44234 /* SurveyTableViewController.swift in Sources */,
 				8F65F336212D896400A44234 /* SurveyPresenter.swift in Sources */,
 				8F32C82B2126B25B00DF6D5E /* RegisterViewController.swift in Sources */,
+				41FEE88B213AE43100FC4FEC /* ProfileCell.swift in Sources */,
 				8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */,
-				41FEE87F213AC41E00FC4FEC /* ParallaxHeaderView.swift in Sources */,
 				8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */,
 				41FEE886213AD8AB00FC4FEC /* ParallaxHeaderLayoutAttributes.swift in Sources */,
 				8F6FE1C82131339A00FD8C3E /* SurveyOfferViewController.swift in Sources */,
@@ -260,6 +263,7 @@
 				8F32C8412126BC9D00DF6D5E /* ColorModel.swift in Sources */,
 				8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */,
 				41FEE888213ADDDF00FC4FEC /* ProfilePresenter.swift in Sources */,
+				41FEE88E213B285D00FC4FEC /* ParallaxCollectionReusableView.swift in Sources */,
 				8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
