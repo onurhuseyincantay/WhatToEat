@@ -33,17 +33,30 @@ class RegisterPresenter: NSObject {
         if email.isEmpty{
             self.registerationDelegate.DidFailed(message: "email can't be blank")
             error = true
+            completion(error)
         }else if password.isEmpty{
             self.registerationDelegate.DidFailed(message: "password can't be blank")
             error = true
+            completion(error)
         }else if name.isEmpty{
             self.registerationDelegate.DidFailed(message: "name can't be blank")
             error = true
+            completion(error)
         }else if surname.isEmpty{
             self.registerationDelegate.DidFailed(message: "surname can't be blank")
             error = true
+            completion(error)
         }
-        completion(error)
+        Service.service.registerUser(email: email, name: name, surname: surname, password: password) { (result, user) in
+            if result != nil {
+                print("Not Available")
+                return
+            }
+            print(user?.name)
+            print(user?.surname)
+            print("hello")
+            completion(result)
+        }
     }
 }
 

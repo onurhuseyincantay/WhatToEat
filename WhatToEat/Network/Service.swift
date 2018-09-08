@@ -33,31 +33,26 @@ public class Service{
         return _REF_OFFERS
     }
     
-    func createFirebaseUser(uid: String, userData: Dictionary<String,AnyObject>){
-        _REF_USERS.child(uid).updateChildValues(userData)
-    }
+  
     
     private func getUser(userId uid:String,completion : @escaping (_ result: Bool, _ user: User?) -> ()){
-        var user : User!
         _REF_USERS.child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? Dictionary<String,AnyObject>{
                 let id = snapshot.key
                 let name = dict[keys.ID.rawValue] as! String
                 let surname = dict[keys.SURNAME.rawValue] as! String
                 let email = dict[keys.EMAIL.rawValue] as! String
-                let joinedDate = dict[keys.JOINED_DATE.rawValue] as! Date
+                let dateString = dict[keys.JOINED_DATE.rawValue] as! String
+                let joinedDate = dateString.toDate(format: "yyyy-MM-dd hh:mm:ss +SSSS")
                 let password = dict[keys.PASSWORD.rawValue] as! String
                 let profileImageUrl = dict[keys.PROFILE_IMAGE_URL.rawValue] as! String
-                user = User(id:id,name: name, surname: surname, email: email, password: password, joinedDate: joinedDate, surveys: [nil], offers: [nil], profileImage: profileImageUrl, finishedSurveys: [nil], acceptedOffers: [nil])
-                completion(true,user!)
-                
+                let userObject = User(id:id,name: name, surname: surname, email: email, password: password, joinedDate: joinedDate!, surveys: [nil], offers: [nil], profileImage: profileImageUrl, finishedSurveys: [nil], acceptedOffers: [nil])
+                completion(true,userObject)
             }
         }) { (error) in
             completion(false,nil)
         }
     }
-        
-    
     
     func checkUserOnDatabase(email:String,password:String,completion : @escaping (_ result:Bool,_ user:User?)->()){
         FIR_AUTH.signIn(withEmail: email, password: password) { (user, error) in
@@ -73,6 +68,27 @@ public class Service{
                     }
                 })
             }
+        }
+    }
+    
+    func registerUser(email:String,name:String,surname:String,password:String,completion : @escaping (_ result:Bool,_ user:User?)->()) {
+        FIR_AUTH.createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil{
+                completion(false,nil)
+            }
+            guard let id = user?.uid else{
+                completion(false,nil)
+                print("no UID")
+                return
+            }
+            let createdUser : Dictionary<String,AnyObject> = [keys.ID.rawValue:id as AnyObject,keys.NAME.rawValue:name as AnyObject,keys.SURNAME.rawValue:surname as AnyObject,keys.PROFILE_IMAGE_URL.rawValue:"" as AnyObject,keys.JOINED_DATE.rawValue:Date().description as AnyObject,keys.PASSWORD.rawValue:password as AnyObject,keys.EMAIL.rawValue:email as AnyObject]
+            FIR_AUTH.signIn(withEmail: email , password: password) { (user, error) in
+                if error != nil{
+                    print("GG")
+                }
+                self._REF_USERS.child(id).updateChildValues(createdUser)
+            }
+            
         }
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F09ECE32139A4B300CA67B7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F09ECE22139A4B300CA67B7 /* Service.swift */; };
+		8F2307DD2143A6E6001F591B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2307DC2143A6E6001F591B /* Extensions.swift */; };
 		8F326F67212D3BDC00A02F32 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F66212D3BDC00A02F32 /* SurveyModel.swift */; };
 		8F326F69212D3DDB00A02F32 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F326F68212D3DDB00A02F32 /* OfferModel.swift */; };
 		8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32C8282126B25B00DF6D5E /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		1B5DC618A52FF6CDAC05C773 /* Pods-WhatToEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToEat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToEat/Pods-WhatToEat.release.xcconfig"; sourceTree = "<group>"; };
 		3D206A24EE677B27B8C13402 /* Pods_WhatToEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F09ECE22139A4B300CA67B7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		8F2307DC2143A6E6001F591B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8F326F66212D3BDC00A02F32 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
 		8F326F68212D3DDB00A02F32 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		8F32C8252126B25B00DF6D5E /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		8F2307DB2143A6CF001F591B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8F2307DC2143A6E6001F591B /* Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		8F32C81C2126B25B00DF6D5E = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		8F32C8272126B25B00DF6D5E /* WhatToEat */ = {
 			isa = PBXGroup;
 			children = (
+				8F2307DB2143A6CF001F591B /* Helper */,
 				8F09ECE12139A49C00CA67B7 /* Network */,
 				8F32C83D2126BC2D00DF6D5E /* CustomComponents */,
 				8F32C83C2126B93200DF6D5E /* Presenter */,
@@ -316,6 +327,7 @@
 				8F32C82B2126B25B00DF6D5E /* LoginViewController.swift in Sources */,
 				8FD88312213704DD00BCD76F /* ProfileViewController.swift in Sources */,
 				8F09ECE32139A4B300CA67B7 /* Service.swift in Sources */,
+				8F2307DD2143A6E6001F591B /* Extensions.swift in Sources */,
 				8F32C8292126B25B00DF6D5E /* AppDelegate.swift in Sources */,
 				8F6FE1C82131339A00FD8C3E /* SurveyOfferViewController.swift in Sources */,
 				8FB921A7212994A8006F5063 /* MainViewController.swift in Sources */,

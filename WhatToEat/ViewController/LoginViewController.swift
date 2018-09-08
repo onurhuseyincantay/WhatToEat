@@ -36,14 +36,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: UIButton){
-        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (error,user)  in
-            if error != nil {
-                self.DidFailed(message: "Fields Cannot be Blank")
-            }else if error == true {
+        self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (result,user)  in
+            if result == true {
                 self.DidSucceed(user: user!)
                 self.navigateMainViewController()
             }else{
-                print("user not found")
+                self.DidFailed(message: "Fields Cannot Be Blank")
             }
         }
     }

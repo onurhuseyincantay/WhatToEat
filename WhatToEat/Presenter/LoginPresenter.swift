@@ -27,20 +27,16 @@ class LoginPresenter: NSObject {
     }
     
     func login(email:String,password: String,completion : @escaping (_ result: Bool?, _ user: User?)->()){
-        var error : Bool?
         if email.isEmpty{
             self.LoginDelegate.DidFailed(message: "email can't be blank")
-            error = true
+            completion(false,nil)
         }else if password.isEmpty{
             self.LoginDelegate.DidFailed(message: "password can't be blank")
-            error = true
+            completion(false,nil)
         }
         Service.service.checkUserOnDatabase(email: email, password: password) { (result, user) in
-            print(user!.name)
-            print(user!.email)
-            completion(result,user)
+            completion(true,user)
         }
-        completion(error,nil)
     }
     
     
