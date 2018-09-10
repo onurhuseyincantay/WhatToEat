@@ -14,7 +14,16 @@ class SurveyPresenter:NSObject {
     let user = User(id:"1",name: "Onur", surname: "Çantay", email: "ohc3807@gmail.com", password: "123456", joinedDate:Date(), surveys: [nil], offers: [nil], profileImage: "www.bombabomba.com", finishedSurveys: [nil], acceptedOffers: [nil])
     init(delegate : SurveyDelegate) {
         self.surveyDelegate = delegate
-        self.surveys = [SurveyModel(header: "İtalyadayım!", description: "İtalyada Sizce ne Yemeliyim", publishDate: Date(), openedUser: self.user, joinedUsers: [nil]),SurveyModel(header: "Fransa Çok Hoş!", description: "Fransada açım ancak ne yiceğimi bilmiyorum :(", publishDate: Date(), openedUser: self.user, joinedUsers: [nil])]
+    }
+    
+    func getAllSurveys(){
+        Service.service.getSurveys { (status, surveys) in
+            if status == false{
+                print("An Error Ocurred")
+                return
+            }
+            self.surveys = surveys as! [SurveyModel]
+        }
     }
     
 }

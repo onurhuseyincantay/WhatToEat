@@ -16,9 +16,9 @@ fileprivate let FIR_AUTH = Auth.auth()
 
 public class Service{
     static let service = Service()
-    private var _REF_USERS = DB_BASE.child("Users")
-    private var _REF_SURVEYS = DB_BASE.child("Surveys")
-    private var _REF_OFFERS = DB_BASE.child("Offers")
+    private var _REF_USERS = DB_BASE.child(keys.USERS.rawValue)
+    private var _REF_SURVEYS = DB_BASE.child(keys.SURVEYS.rawValue)
+    private var _REF_OFFERS = DB_BASE.child(keys.OFFERS.rawValue)
     
     
     var REF_USERS: DatabaseReference {
@@ -32,9 +32,7 @@ public class Service{
     var REF_OFFERS : DatabaseReference{
         return _REF_OFFERS
     }
-    
-  
-    
+    /// this function gets user data from database
     private func getUser(userId uid:String,completion : @escaping (_ result: Bool, _ user: User?) -> ()){
         _REF_USERS.child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? Dictionary<String,AnyObject>{
@@ -43,7 +41,7 @@ public class Service{
                 let surname = dict[keys.SURNAME.rawValue] as! String
                 let email = dict[keys.EMAIL.rawValue] as! String
                 let dateString = dict[keys.JOINED_DATE.rawValue] as! String
-                let joinedDate = dateString.toDate(format: "yyyy-MM-dd hh:mm:ss +SSSS")
+                let joinedDate = dateString.toDate(format: keys.DATE_FORMAT.rawValue)
                 let password = dict[keys.PASSWORD.rawValue] as! String
                 let profileImageUrl = dict[keys.PROFILE_IMAGE_URL.rawValue] as! String
                 let userObject = User(id:id,name: name, surname: surname, email: email, password: password, joinedDate: joinedDate!, surveys: [nil], offers: [nil], profileImage: profileImageUrl, finishedSurveys: [nil], acceptedOffers: [nil])
@@ -54,6 +52,35 @@ public class Service{
         }
     }
     
+    func getSurveys(completion : @escaping (_ status: Bool,_ surveys:[SurveyModel?]) -> ()) {
+        self._REF_SURVEYS.observe(.value, with: { (snapshots) in
+            if let snapshot = snapshots.children.allObjects as? [DataSnapshot]{
+            var surveys : [SurveyModel?] = []
+                for snap in snapshot{
+                    print("Onur : \(snap)")
+                    self.getUser(userId: snap.key, completion: { (status, user) in
+                        if status != false {
+                            print("user not found")
+                            completion(false,[nil])
+                        }
+                        if let dict = snap.value as? Dictionary<String,AnyObject>{
+                            print(dict)
+                            // burada joined users değişecek şimdilik kurgulayamadım
+                            surveys.append(SurveyModel(header: dict[keys.HEADER.rawValue] as! String, description: dict[keys.DESCRIPTION.rawValue] as! String, publishDate: (dict[keys.PUBLISH_DATE.rawValue] as! String).toDate(format: keys.DATE_FORMAT.rawValue)!, openedUser: user!, joinedUsers: [nil]))
+                        }
+                    })
+                   
+                }
+                completion(true,surveys)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    
+    /// This Function checks for user exist or not
     func checkUserOnDatabase(email:String,password:String,completion : @escaping (_ result:Bool,_ user:User?)->()){
         FIR_AUTH.signIn(withEmail: email, password: password) { (user, error) in
             if error != nil{
@@ -97,8 +124,8 @@ public class Service{
         self._REF_SURVEYS.child(uid).childByAutoId().updateChildValues(surveyData)
     }
     
-    func createOffer(surveyId uid: String,offerData:Dictionary<String,AnyObject>)  {
-        self._REF_OFFERS.child(uid).updateChildValues(offerData)
+    func createOffer(surveyId sid: String,userId uid:String,offerData:Dictionary<String,AnyObject>)  {
+        self._REF_OFFERS.child(sid).child(uid).updateChildValues(offerData)
     }
     
     func joinOffer(surveyId sUID:String,offerId oUID : String,userData:Dictionary<String,AnyObject>){
@@ -112,10 +139,17 @@ enum keys :String{
     case SURNAME = "surname"
     case PASSWORD = "password"
     case EMAIL = "email"
+    case DATE_FORMAT = "yyyy-MM-dd hh:mm:ss +SSSS"
     case ID = "id"
+    case USER_ID = "userId"
+    case DESCRIPTION = "description"
     case JOINED_DATE = "joinedDate"
-    case OFFERS = "offers"
-    case SURVEYS = "surveys"
+    case PUBLISH_DATE = "publishDate"
+    case JOINED_USERS = "joinedUsers"
+    case OFFERS = "Offers"
+    case SURVEYS = "Surveys"
+    case USERS = "Users"
+    case HEADER = "header"
     case PROFILE_IMAGE_URL = "profileImageUrl"
     case FINISHED_SURVEYS = "finishedSurveys"
     case ACCEPTED_OFFERS = "acceptedOffers"

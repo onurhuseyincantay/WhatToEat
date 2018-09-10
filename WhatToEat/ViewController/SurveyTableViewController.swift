@@ -13,8 +13,8 @@ class SurveyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.surveyPresenter = SurveyPresenter(delegate: self)
+        self.surveyPresenter.getAllSurveys()
         self.setupTableView()
-       
     }
     func setupTableView() {
         self.tableView.delegate = self
@@ -30,6 +30,7 @@ class SurveyTableViewController: UITableViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
+
 }
 extension SurveyTableViewController:SurveyDelegate{
     func showSurveyInfo(surveyId: Int) -> SurveyModel {
