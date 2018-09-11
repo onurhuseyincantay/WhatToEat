@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OfferModel:Codable {
+class OfferModel: NSCoding {
     private var _openedUser : User
     private var _joinedUsers : [User?]
     private var _offerDate : Date
@@ -49,12 +49,26 @@ class OfferModel:Codable {
             self._offerCount = self._joinedUsers.count + 1
         }
     }
-    init(joinedUsers : [User?],openedUser : User,offeredMeal:String) {
+    init(joinedUsers : [User?],openedUser : User,offeredMeal:String,offerDate:Date = Date()) {
         self._joinedUsers = joinedUsers
         self._openedUser = openedUser
         self._offerDate = Date()
         self._offeredMeal = offeredMeal
         self._offerCount = joinedUsers.count + 1
-        
     }
+    required convenience init(coder aDecoder: NSCoder) {
+        let joinedUsers = aDecoder.decodeObject(forKey: "joinedUsers") as! [User?]
+        let openedUser = aDecoder.decodeObject(forKey: "openedUser") as! User
+        let offerDate = aDecoder.decodeObject(forKey: "offerDate") as! Date
+        let offeredMeal = aDecoder.decodeObject(forKey: "offeredMeal") as! String
+        self.init(joinedUsers: joinedUsers, openedUser: openedUser, offeredMeal: offeredMeal, offerDate: offerDate)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(joinedUsers, forKey: "joinedUsers")
+        aCoder.encode(openedUser, forKey: "openedUser")
+        aCoder.encode(offerDate, forKey: "offerDate")
+        aCoder.encode(offeredMeal,forKey:"offeredMeal")
+    }
+    
 }

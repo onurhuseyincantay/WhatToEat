@@ -32,6 +32,8 @@ public class Service{
     var REF_OFFERS : DatabaseReference{
         return _REF_OFFERS
     }
+    
+    
     /// this function gets user data from database
     private func getUser(userId uid:String,completion : @escaping (_ result: Bool, _ user: User?) -> ()){
         _REF_USERS.child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -89,8 +91,6 @@ public class Service{
             print(error.localizedDescription)
         }
     }
-    
-    
     
     /// This Function checks for user exist or not
     func checkUserOnDatabase(email:String,password:String,completion : @escaping (_ result:Bool,_ user:User?)->()){

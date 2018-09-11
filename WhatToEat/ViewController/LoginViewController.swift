@@ -35,11 +35,16 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+
+    
     @IBAction func loginPressed(_ sender: UIButton){
         self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (result,user)  in
             if result == true {
                 self.DidSucceed(user: user!)
-                self.navigateMainViewController()
+                self.saveUserToUserDefaultsAsData(user: user!)
+                self.navigateMainViewController(user: user!)
+                
             }else{
                 self.DidFailed(message: "Fields Cannot Be Blank")
             }
@@ -51,7 +56,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController:LoginDelegate{
-    func navigateMainViewController() {
+    func navigateMainViewController(user:User) {
         if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
             print("S.a")
             self.present(viewController, animated: true, completion: nil)

@@ -40,6 +40,7 @@ class LoginPresenter: NSObject {
     }
     
     
+    
    
 }
 
@@ -48,7 +49,7 @@ protocol LoginDelegate {
     func hideProgress()
     func DidSucceed(user:User)
     func DidFailed(message: String)
-    func navigateMainViewController()
+    func navigateMainViewController(user:User)
     func navigateRegisterViewController()
 }
 

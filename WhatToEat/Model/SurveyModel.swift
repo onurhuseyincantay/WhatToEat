@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SurveyModel : Codable{
+class SurveyModel :NSCoding{
     private var _header : String!
     private var _description : String!
     private var _publishDate : Date!
@@ -63,4 +63,23 @@ class SurveyModel : Codable{
         self._joinedUsers = joinedUsers
         self._isAccepted = isAccepted
     }
+    required convenience init(coder aDecoder: NSCoder) {
+        let header = aDecoder.decodeObject(forKey: "header") as! String
+        let description = aDecoder.decodeObject(forKey: "description") as! String
+        let publishDate = aDecoder.decodeObject(forKey: "publishDate") as! Date
+        let joinedUsers = aDecoder.decodeObject(forKey: "joinedUsers") as! [User?]
+        let openedUser = aDecoder.decodeObject(forKey: "openedUser") as! User
+        let isAccepted = aDecoder.decodeBool(forKey: "isAccepted")
+        self.init(header: header, description: description, publishDate: publishDate, openedUser: openedUser, joinedUsers: joinedUsers, isAccepted: isAccepted)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(header, forKey: "header")
+        aCoder.encode(description, forKey: "description")
+        aCoder.encode(publishDate, forKey: "publishDate")
+        aCoder.encode(joinedUsers,forKey:"joinedUsers")
+        aCoder.encode(isAccepted, forKey: "isAccepted")
+        aCoder.encode(openedUser,forKey:"openedUser")
+    }
+    
 }

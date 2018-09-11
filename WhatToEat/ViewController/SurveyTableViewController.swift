@@ -10,13 +10,25 @@ import UIKit
 
 class SurveyTableViewController: UITableViewController {
     private var surveyPresenter : SurveyPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.surveyPresenter = SurveyPresenter(delegate: self)
         self.surveyPresenter.getAllSurveys(tableview: self.tableView)
         self.setupTableView()
     }
-    func setupTableView() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigationControllerBarButtonItems()
+    }
+    
+    private func setupNavigationControllerBarButtonItems(){
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(postSurvey))
+        self.navigationController?.navigationBar.topItem?.setRightBarButton(rightButton, animated: true)
+        
+    }
+    
+    private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self.surveyPresenter
     }
@@ -38,15 +50,15 @@ extension SurveyTableViewController:SurveyDelegate{
         return survey
     }
     
-    func offerSurvey(user: User) {
+    func offerSurvey() {
         print("survey offered")
     }
     
-    func postSurvey(user: User) {
-        print("survey posted")
+    @objc func postSurvey(surveyData:Dictionary<String,AnyObject>) {
+        Service.service.createSurvey(userId:self.getCurrentUser().id, surveyData: surveyData)
     }
     
-    func endSurvey(user: User) {
+    func endSurvey() {
         
         print("survey finished")
     }

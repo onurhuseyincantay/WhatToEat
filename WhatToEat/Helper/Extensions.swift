@@ -35,3 +35,19 @@ extension DateFormatter {
         locale = Locale.current
     }
 }
+
+extension UIViewController{
+    func getCurrentUser() -> User {
+        let userDefaults = UserDefaults.standard
+        let decoded  = userDefaults.object(forKey: "currentUser") as! Data
+        let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! User
+        return decodedUser
+    }
+    
+    func saveUserToUserDefaultsAsData(user:User) {
+        let userDefaults = UserDefaults.standard
+        let encodedData : Data = NSKeyedArchiver.archivedData(withRootObject: user)
+        userDefaults.set(encodedData, forKey: "currentUser")
+        userDefaults.synchronize()
+    }
+}

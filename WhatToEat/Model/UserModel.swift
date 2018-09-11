@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class User : Codable {
+class User : NSCoding {
     private var _name : String!
     private var _id : String!
     private var _surname : String!
@@ -106,6 +106,36 @@ class User : Codable {
         self._offers = offers
         self._finishedSurveys = finishedSurveys
         self._acceptedOffers = acceptedOffers
+    }
+    
+    required convenience init(coder aDecoder: NSCoder) {
+        let id = aDecoder.decodeObject(forKey: "id") as! String
+        let name = aDecoder.decodeObject(forKey: "name") as! String
+        let surname = aDecoder.decodeObject(forKey: "surname") as! String
+        let email = aDecoder.decodeObject(forKey: "email") as! String
+        let profileImage = aDecoder.decodeObject(forKey: "profileImage") as! String
+        let password = aDecoder.decodeObject(forKey: "password") as! String
+        let joinedDate = aDecoder.decodeObject(forKey: "joinedDate") as! Date
+        let surveys = aDecoder.decodeObject(forKey: "surveys") as! [SurveyModel?]
+        let offers = aDecoder.decodeObject(forKey: "offers") as! [OfferModel?]
+        let finishedSurveys = aDecoder.decodeObject(forKey: "finishedSurveys") as! [SurveyModel?]
+        let acceptedOffers = aDecoder.decodeObject(forKey: "acceptedOffers") as! [OfferModel?]
+        self.init(id: id, name: name, surname: surname, email: email, password: password, joinedDate: joinedDate, surveys: surveys, offers: offers, profileImage: profileImage, finishedSurveys: finishedSurveys, acceptedOffers: acceptedOffers)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(surname, forKey: "surname")
+        aCoder.encode(email,forKey:"email")
+        aCoder.encode(profileImage, forKey: "profileImage")
+        aCoder.encode(password, forKey: "password")
+        aCoder.encode(joinedDate, forKey: "joinedDate")
+        aCoder.encode(surveys,forKey:"surveys")
+        aCoder.encode(offers,forKey:"offers")
+        aCoder.encode(finishedSurveys,forKey:"finishedSurveys")
+        aCoder.encode(acceptedOffers,forKey:"acceptedOffers")
+        
     }
     
 }

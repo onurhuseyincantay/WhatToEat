@@ -46,9 +46,9 @@ extension SurveyPresenter:UITableViewDataSource{
 }
 
 protocol SurveyDelegate {
-    func offerSurvey(user : User)
-    func postSurvey(user : User)
-    func endSurvey(user : User)
+    func offerSurvey()
+    func postSurvey(surveyData:Dictionary<String,AnyObject>)
+    func endSurvey()
     func showSurveyInfo(surveyId : Int) -> SurveyModel
     func switchSurveyChanel()
 }
