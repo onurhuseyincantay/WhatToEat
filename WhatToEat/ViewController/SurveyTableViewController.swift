@@ -16,6 +16,10 @@ class SurveyTableViewController: UITableViewController {
         self.surveyPresenter = SurveyPresenter(delegate: self)
         self.surveyPresenter.getAllSurveys(tableview: self.tableView)
         self.setupTableView()
+        let user = User.getUser()
+        print(user?.id)
+        print(user?.surname)
+        print(user?.email)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

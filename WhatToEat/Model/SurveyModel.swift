@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SurveyModel :NSCoding{
+class SurveyModel :NSObject,NSCoding{
     private var _header : String!
     private var _description : String!
     private var _publishDate : Date!
@@ -22,7 +22,7 @@ class SurveyModel :NSCoding{
             self._header = newValue
         }
     }
-    var description : String{
+    var desc : String{
         get{
             return _description
         }set{
@@ -75,7 +75,7 @@ class SurveyModel :NSCoding{
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(header, forKey: "header")
-        aCoder.encode(description, forKey: "description")
+        aCoder.encode(desc, forKey: "description")
         aCoder.encode(publishDate, forKey: "publishDate")
         aCoder.encode(joinedUsers,forKey:"joinedUsers")
         aCoder.encode(isAccepted, forKey: "isAccepted")

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OfferModel: NSCoding {
+class OfferModel: NSObject,NSCoding {
     private var _openedUser : User
     private var _joinedUsers : [User?]
     private var _offerDate : Date

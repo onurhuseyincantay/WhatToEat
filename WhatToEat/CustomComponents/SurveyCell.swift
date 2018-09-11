@@ -23,7 +23,7 @@ class SurveyCell: UITableViewCell {
             surveyHeader.text = survey.header
             self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2 + 10
             self.profileImage.clipsToBounds = true
-            surveyDescription.text = survey.description
+            surveyDescription.text = survey.desc
             surveyDate.text = survey.publishDate.description
         }
     }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class User : NSCoding {
+class User : NSObject,NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("currentUser")
     private var _name : String!
