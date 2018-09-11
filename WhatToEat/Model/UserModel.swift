@@ -19,6 +19,7 @@ class User : NSCoding {
     private var _profileImage : String?
     private var _finishedSurveys : [SurveyModel?]
     private var _acceptedOffers : [OfferModel?]
+    
     var name : String{
         get{
             return self._name
@@ -26,6 +27,7 @@ class User : NSCoding {
             self._name = newValue
         }
     }
+    
     var id : String{
         get{
             return self._id
@@ -33,6 +35,7 @@ class User : NSCoding {
             self._id = newValue
         }
     }
+    
     var surname : String{
         get{
             return self._surname
@@ -40,6 +43,7 @@ class User : NSCoding {
             self._surname = newValue
         }
     }
+    
     var email : String{
         get{
             return self._email
@@ -47,6 +51,7 @@ class User : NSCoding {
             self._email = newValue
         }
     }
+    
     var password : String{
         get{
             return self._password
@@ -54,11 +59,13 @@ class User : NSCoding {
             self._password = newValue
         }
     }
+    
     var joinedDate : Date{
         get{
             return self._joinedDate
         }
     }
+    
     var surveys : [SurveyModel?]{
         get{
             return self._surveys
@@ -66,6 +73,7 @@ class User : NSCoding {
             self._surveys = newValue
         }
     }
+    
     var offers : [OfferModel?]{
         get{
             return self._offers
@@ -73,6 +81,7 @@ class User : NSCoding {
             self._offers = newValue
         }
     }
+    
     var profileImage : String?{
         get{
             return self._profileImage
@@ -80,6 +89,7 @@ class User : NSCoding {
             self._profileImage = newValue
         }
     }
+    
     var finishedSurveys : [SurveyModel?]{
         get{
             return self._finishedSurveys
@@ -87,6 +97,7 @@ class User : NSCoding {
             self._finishedSurveys = newValue
         }
     }
+    
     var acceptedOffers :[OfferModel?]{
         get{
             return self._acceptedOffers
@@ -94,6 +105,7 @@ class User : NSCoding {
             self._acceptedOffers = newValue
         }
     }
+    
     init(id:String,name: String,surname:String,email:String,password : String,joinedDate : Date,surveys : [SurveyModel?],offers :[OfferModel?],profileImage : String,finishedSurveys : [SurveyModel?],acceptedOffers : [OfferModel?]) {
         self._name = name
         self._id = id

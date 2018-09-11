@@ -9,8 +9,10 @@
 import UIKit
 
 class MainViewController: UINavigationController {
+    let user = User.loadUser()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(user!.id)
     }
     
 }

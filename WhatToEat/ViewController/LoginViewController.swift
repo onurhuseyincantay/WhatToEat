@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         self.presenter.login(email: emailTextField.text!, password: passwordTextField.text!) { (result,user)  in
             if result == true {
                 self.DidSucceed(user: user!)
-                self.saveUserToUserDefaultsAsData(user: user!)
+                User.saveUser(user!)
                 self.navigateMainViewController(user: user!)
                 
             }else{

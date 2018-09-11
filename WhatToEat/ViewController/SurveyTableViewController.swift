@@ -55,7 +55,7 @@ extension SurveyTableViewController:SurveyDelegate{
     }
     
     @objc func postSurvey(surveyData:Dictionary<String,AnyObject>) {
-        Service.service.createSurvey(userId:self.getCurrentUser().id, surveyData: surveyData)
+        Service.service.createSurvey(userId:self.surveyPresenter.currentUser!.id, surveyData: surveyData)
     }
     
     func endSurvey() {
