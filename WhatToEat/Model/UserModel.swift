@@ -8,6 +8,8 @@
 
 import Foundation
 class User : NSCoding {
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("currentUser")
     private var _name : String!
     private var _id : String!
     private var _surname : String!
@@ -148,6 +150,18 @@ class User : NSCoding {
         aCoder.encode(finishedSurveys,forKey:"finishedSurveys")
         aCoder.encode(acceptedOffers,forKey:"acceptedOffers")
         
+    }
+    
+    class func saveUser(user:User){
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: user)
+        do {
+            try savedData.write(to: ArchiveURL)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    class func getUser()->User?{
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.absoluteString) as? User
     }
     
 }

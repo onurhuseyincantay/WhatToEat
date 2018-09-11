@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UINavigationController {
-    let user = User.loadUser()
+    let user = User.getUser()
     override func viewDidLoad() {
         super.viewDidLoad()
         print(user!.id)

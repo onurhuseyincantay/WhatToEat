@@ -10,7 +10,6 @@ import UIKit
 
 class SurveyPresenter:NSObject {
     var surveyDelegate : SurveyDelegate
-    let currentUser = User.loadUser()
     var surveys : [SurveyModel] = []
     let user = User(id:"1",name: "Onur", surname: "Çantay", email: "ohc3807@gmail.com", password: "123456", joinedDate:Date(), surveys: [nil], offers: [nil], profileImage: "www.bombabomba.com", finishedSurveys: [nil], acceptedOffers: [nil])
     init(delegate : SurveyDelegate) {
