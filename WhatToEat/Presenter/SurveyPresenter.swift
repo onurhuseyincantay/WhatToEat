@@ -16,13 +16,14 @@ class SurveyPresenter:NSObject {
         self.surveyDelegate = delegate
     }
     
-    func getAllSurveys(){
+    func getAllSurveys(tableview:UITableView){
         Service.service.getSurveys { (status, surveys) in
             if status == false{
                 print("An Error Ocurred")
                 return
             }
             self.surveys = surveys as! [SurveyModel]
+            tableview.reloadData()
         }
     }
     
@@ -35,6 +36,7 @@ extension SurveyPresenter:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SurveyCell") as? SurveyCell{
             cell.survey = surveys[indexPath.row]
+            print(cell.survey.description)
             return cell
         }
         return UITableViewCell()

@@ -13,7 +13,7 @@ class SurveyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.surveyPresenter = SurveyPresenter(delegate: self)
-        self.surveyPresenter.getAllSurveys()
+        self.surveyPresenter.getAllSurveys(tableview: self.tableView)
         self.setupTableView()
     }
     func setupTableView() {

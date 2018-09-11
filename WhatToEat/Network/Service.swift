@@ -48,6 +48,7 @@ public class Service{
                 completion(true,userObject)
             }
         }) { (error) in
+            print(error.localizedDescription)
             completion(false,nil)
         }
     }
@@ -58,20 +59,31 @@ public class Service{
             var surveys : [SurveyModel?] = []
                 for snap in snapshot{
                     print("Onur : \(snap)")
+                    print("-----------------")
+                    
+                    print("Onur : snap Value\(snap.value)")
                     self.getUser(userId: snap.key, completion: { (status, user) in
-                        if status != false {
+                        print("geting Users")
+                        if status == false {
                             print("user not found")
                             completion(false,[nil])
                         }
-                        if let dict = snap.value as? Dictionary<String,AnyObject>{
-                            print(dict)
-                            // burada joined users değişecek şimdilik kurgulayamadım
-                            surveys.append(SurveyModel(header: dict[keys.HEADER.rawValue] as! String, description: dict[keys.DESCRIPTION.rawValue] as! String, publishDate: (dict[keys.PUBLISH_DATE.rawValue] as! String).toDate(format: keys.DATE_FORMAT.rawValue)!, openedUser: user!, joinedUsers: [nil]))
+                        if let surveySnap = snap.children.allObjects as? [DataSnapshot]{
+                            for survey in surveySnap{
+                                if let dict = survey.value as? Dictionary<String,AnyObject>{
+                                    print("Hello Dict")
+                                    print("Onur : Dict \(dict)")
+                                    // burada joined users değişecek şimdilik kurgulayamadım
+                                    surveys.append(SurveyModel(header: dict[keys.HEADER.rawValue] as! String, description: dict[keys.DESCRIPTION.rawValue] as! String, publishDate: (dict[keys.PUBLISH_DATE.rawValue] as! String).toDate(format: keys.DATE_FORMAT.rawValue)!, openedUser: user!, joinedUsers: [nil]))
+                                    if snap == snapshot.last && survey == surveySnap.last{
+                                        completion(true,surveys)
+                                    }
+                                }
+                            }
+                            
                         }
                     })
-                   
                 }
-                completion(true,surveys)
             }
         }) { (error) in
             print(error.localizedDescription)
