@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class User : NSObject,NSCoding {
+class User : NSObject,NSCoding{
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("currentUser")
     private var _name : String!
@@ -161,7 +161,7 @@ class User : NSObject,NSCoding {
         }
     }
     class func getUser()->User?{
-        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.absoluteString) as? User
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.path) as? User
     }
     
 }

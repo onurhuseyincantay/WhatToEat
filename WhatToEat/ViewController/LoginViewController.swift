@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
             self.view.backgroundColor = self.presenter.modelColor.colors.first!
         }
         self.logoConstraint.constant = self.logoImageView.frame.height / 8
+        if self.checkUserIsAlreadyLoggedin(){
+            self.navigateMainViewController(user: User.getUser()!)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +59,15 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController:LoginDelegate{
+    func checkUserIsAlreadyLoggedin() -> Bool {
+        let user = User.getUser()
+        if user != nil{
+            return true
+        }else{
+            return false
+        }
+    }
+    
     func navigateMainViewController(user:User) {
         if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController{
             print("S.a")

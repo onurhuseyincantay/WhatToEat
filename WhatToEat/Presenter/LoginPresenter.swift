@@ -50,6 +50,7 @@ protocol LoginDelegate {
     func DidSucceed(user:User)
     func DidFailed(message: String)
     func navigateMainViewController(user:User)
+    func checkUserIsAlreadyLoggedin()->Bool
     func navigateRegisterViewController()
 }
 
